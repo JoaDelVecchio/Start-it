@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-export const posts = [
+const posts = [
   {
     _createdAt: "2015-12-11T10:00:00Z",
     views: "1500",
