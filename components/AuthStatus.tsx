@@ -1,5 +1,4 @@
 import React from "react";
-import Link from "next/link";
 import SignIn from "@/components/SignIn";
 import SignOut from "@/components/SignOut";
 import { auth } from "@/auth";
