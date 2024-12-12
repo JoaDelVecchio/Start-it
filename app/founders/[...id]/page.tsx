@@ -2,7 +2,7 @@ import React from "react";
 import { Post } from "@/types";
 
 const Founder = async ({ params }: { params: { id: string } }) => {
-  const { id } = await params;
+  const { id } = params;
 
   let startupData: Post[] = [];
   try {
