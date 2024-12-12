@@ -1,3 +1,4 @@
+import { NextResponse } from "next/server";
 export const posts = [
   {
     _createdAt: "2015-12-11T10:00:00Z",
@@ -86,5 +87,5 @@ export const posts = [
 ];
 
 export async function GET() {
-  return Response.json(posts);
+  return NextResponse.json(posts);
 }
