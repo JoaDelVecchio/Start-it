@@ -53,7 +53,7 @@ export default async function Home({
         <p>{query ? "Results for" + " " + query : "All Start Ups"}</p>
         <ul className="grid grid-cols-3 gap-4">
           {posts.length > 0 ? (
-            posts.map((post) => <PostCard post={post} />)
+            posts.map((post) => <PostCard key={post._id} post={post} />)
           ) : (
             <p className="col-span-3 text-center text-gray-500">Empty</p>
           )}

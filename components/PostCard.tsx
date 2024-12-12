@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 type Post = {
   _createdAt: string;
@@ -13,25 +14,32 @@ type Post = {
 
 const PostCard = ({ post }: { post: Post }) => {
   return (
-    <li
-      key={post._id}
-      className="bg-white shadow-md rounded-lg p-4 text-gray-800"
-    >
-      <img
+    <li className="bg-gray-900 mt-5 text-white rounded-lg shadow-lg overflow-hidden flex flex-col items-center p-6 transition-transform transform hover:scale-105">
+      <Image
         src={post.image}
+        width={200}
+        height={200}
         alt={post.title}
-        className="h-24 w-24 mx-auto rounded-full mb-4"
+        className="h-28 w-28 rounded-full object-cover mb-4"
       />
-      <h3 className="font-bold text-lg mb-2">{post.title}</h3>
-      <p className="text-sm text-gray-600 mb-2">{post.description}</p>
-      <span className="block text-sm text-gray-500">Author: {post.author}</span>
-      <span className="block text-sm text-gray-500">Views: {post.views}</span>
-      <span className="block text-sm text-gray-500">
-        Created: {post._createdAt}
-      </span>
-      <span className="block text-sm text-gray-500">
-        Category: {post.category}
-      </span>
+      <h3 className="font-bold text-xl text-gray-100 mb-2">{post.title}</h3>
+      <p className="text-sm text-gray-400 text-center mb-4">
+        {post.description}
+      </p>
+      <div className="w-full border-t border-gray-700 pt-4 mt-4 flex flex-col items-start text-sm">
+        <span className="text-gray-500">
+          Author: <span className="text-gray-300">{post.author}</span>
+        </span>
+        <span className="text-gray-500">
+          Views: <span className="text-gray-300">{post.views}</span>
+        </span>
+        <span className="text-gray-500">
+          Created: <span className="text-gray-300">{post._createdAt}</span>
+        </span>
+        <span className="text-gray-500">
+          Category: <span className="text-gray-300">{post.category}</span>
+        </span>
+      </div>
     </li>
   );
 };
