@@ -40,7 +40,9 @@ export default async function Home({
         <SearchForm query={query} />
       </section>
       <section className="w-full max-w-5xl">
-        <p>{query ? "Results for" + " " + query : "All Start Ups"}</p>
+        <p className=" text-md text-center text-opacity-70 font-bold text-gray-900 font-sans mt-11 mb-7">
+          {query ? "Results for" + " " + query + "..." : "All Startups"}
+        </p>
         <ul className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-5">
           {startupsData.length > 0 ? (
             startupsData
@@ -52,7 +54,7 @@ export default async function Home({
               .map((post: Post) => <PostCard key={post._id} post={post} />)
           ) : (
             <p className="col-span-full text-center text-gray-500">
-              No results for that search
+              Try again in a few minutes, we are working on something!
             </p>
           )}
         </ul>
