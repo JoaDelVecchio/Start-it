@@ -6,7 +6,8 @@ const Founder = async ({ params }: { params: { id: string } }) => {
 
   let startupData: Post[] = [];
   try {
-    const res = await fetch("http://localhost:3000/api/startups");
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/startups`);
+
     if (!res.ok) {
       throw new Error("Error fetching data");
     }

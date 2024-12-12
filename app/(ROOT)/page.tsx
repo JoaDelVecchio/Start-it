@@ -12,10 +12,11 @@ export default async function Home({
   const query = (await searchParams).query;
   let startupsData: Post[] = [];
   try {
-    const res = await fetch("http://localhost:3000/api/startups", {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/startups`, {
       next: { revalidate: 10 },
       cache: "no-store",
     });
+
     if (!res.ok) {
       throw new Error(`Failed to fetch startups: ${res.statusText}`);
     }
