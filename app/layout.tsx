@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Navbar from "../components/Navbar";
 import "./globals.css";
-import "./globals.css";
+import "easymde/dist/easymde.min.css";
 import { Inter } from "next/font/google";
 
 const inter = Inter({
