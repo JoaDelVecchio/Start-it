@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
-import SignIn from "@/app/components/SignIn";
-import SignOut from "@/app/components/SignOut";
+import SignIn from "@/components/SignIn";
+import SignOut from "@/components/SignOut";
 import { auth } from "@/auth";
 
 const AuthStatus = async () => {
