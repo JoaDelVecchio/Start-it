@@ -10,6 +10,8 @@ export default async function Home({
   searchParams: Promise<{ query?: string }>;
 }) {
   const query = (await searchParams).query;
+  console.log("API URL:", process.env.NEXT_PUBLIC_API_URL);
+
   let startupsData: Post[] = [];
   try {
     const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/startups`, {
