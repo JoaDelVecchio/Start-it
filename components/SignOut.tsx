@@ -3,11 +3,12 @@
 import React from "react";
 import { signOut } from "next-auth/react";
 import Link from "next/link";
+import { Session } from "next-auth";
 
-const SignOut = ({ session }) => {
+const SignOut = ({ session }: { session: Session }) => {
   return (
     <div>
-      <Link href={`/user/${session?.id}`}></Link>
+      <Link href={`/user/${session?.user?.id}`}></Link>
       <form
         onSubmit={async (e) => {
           e.preventDefault();
