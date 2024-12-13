@@ -1,13 +1,12 @@
 import React from "react";
 import { Post } from "@/types";
 
-const Founder = async ({ params }: { params: { id: string } }) => {
-  const { id } = params;
+const Founder = async ({ params }: { params: Promise<{ id: string }> }) => {
+  const { id } = await params;
 
   let startupData: Post[] = [];
   try {
     const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/startups`);
-
     if (!res.ok) {
       throw new Error("Error fetching data");
     }

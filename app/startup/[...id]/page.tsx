@@ -1,8 +1,8 @@
 import React from "react";
 import { Post } from "@/types";
 
-const Startup = async ({ params }: { params: { id: string } }) => {
-  const { id } = params;
+const Startup = async ({ params }: { params: Promise<{ id: string }> }) => {
+  const { id } = await params;
 
   let startupData: Post[] = [];
   try {
