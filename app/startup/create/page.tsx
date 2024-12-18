@@ -6,6 +6,10 @@ import React from "react";
 const Create = async () => {
   const session = await auth();
 
+  if (!session) {
+    redirect("/api/auth/signin?callbackUrl=/create");
+  }
+
   return (
     <section className="flex flex-col items-center justify-center min-h-screen bg-black text-white px-6 py-12">
       <div className="w-full max-w-2xl bg-gray-900 p-8 rounded-lg shadow-lg">
