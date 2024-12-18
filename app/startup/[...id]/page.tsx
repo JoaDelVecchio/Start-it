@@ -3,6 +3,7 @@ import { Post } from "@/types";
 
 const Startup = async ({ params }: { params: Promise<{ id: string }> }) => {
   const { id } = await params;
+console.log("API URL:", process.env.NEXT_PUBLIC_API_URL);
 
   let startupData: Post[] = [];
   try {

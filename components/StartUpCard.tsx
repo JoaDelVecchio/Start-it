@@ -31,23 +31,25 @@ const PostCard = ({ post }: { post: Post }) => {
         <Image
           src={post.image}
           alt={post.title}
-          layout="fill"
-          objectFit="cover"
-          className="rounded-t-lg transition-transform transform hover:scale-110"
+          fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          className="rounded-t-lg transition-transform transform hover:scale-110 object-cover"
         />
       </div>
 
       {/* Content Section */}
       <div className="flex-grow px-4 py-3">
-        <Link href={`/founders/${post._id}`}>
-          <h3 className="text-sm text-gray-700 mb-1 hover:text-gray-900 transition-colors">
-            {post.founder}
-          </h3>
+        <Link
+          href={`/founders/${post._id}`}
+          className="text-sm text-gray-700 mb-1 hover:text-gray-900 transition-colors"
+        >
+          {post.founder}
         </Link>
-        <Link href={`/startup/${post._id}`}>
-          <h3 className="font-bold text-lg text-gray-900 mb-2 hover:underline">
-            {post.title}
-          </h3>
+        <Link
+          href={`/startup/${post._id}`}
+          className="font-bold text-lg text-gray-900 mb-2 hover:underline"
+        >
+          {post.title}
         </Link>
         <p className="text-sm text-gray-600 line-clamp-3 hover:text-gray-800 transition-colors">
           {post.description}
