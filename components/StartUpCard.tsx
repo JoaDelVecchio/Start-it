@@ -41,7 +41,7 @@ const PostCard = ({ post }: { post: Post }) => {
       <div className="flex-grow px-4 py-3">
         <Link
           href={`/founders/${post._id}`}
-          className="text-sm text-gray-700 mb-1 hover:text-gray-900 transition-colors"
+          className="block text-sm text-gray-700 mb-1 hover:text-gray-900 transition-colors"
         >
           {post.founder}
         </Link>

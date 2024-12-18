@@ -8,7 +8,7 @@ import { Session } from "next-auth";
 const SignOut = ({ session }: { session: Session }) => {
   return (
     <div>
-      <Link href={`/user/${session?.user?.id}`}></Link>
+      <Link href={`/user/${session?.user?.name}`}>{session.user?.name}</Link>
       <form
         onSubmit={async (e) => {
           e.preventDefault();
