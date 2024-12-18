@@ -7,7 +7,7 @@ import { Session } from "next-auth";
 
 const SignOut = ({ session }: { session: Session }) => {
   return (
-    <div className="flex gap-4">
+    <div className="flex gap-4 items-center">
       <Link
         href={`/user/${session?.user?.name}`}
         className="text-xl font-semibold text-gray-800 hover:text-gray-600 transition-colors"
