@@ -8,7 +8,7 @@ const Create = async () => {
   const session = await auth();
 
   if (!session) {
-    redirect("https://start-it-six.vercel.app/api/auth/callback/google");
+    redirect("/api/auth/signin?callbackUrl=/create");
   }
 
   return (
